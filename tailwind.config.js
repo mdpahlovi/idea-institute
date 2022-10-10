@@ -2,7 +2,17 @@
 module.exports = {
     content: ["./src/**/*.{js,jsx,ts,tsx}"],
     theme: {
-        extend: {},
+        screens: {
+            xs: "448px",
+            sm: "640px",
+            md: "768px",
+            lg: "1024px",
+            xl: "1280px",
+            xxl: "1600px",
+        },
+        fontFamily: {
+            sans: ["Poppins", "sans-serif"],
+        },
     },
     plugins: [require("daisyui")],
 

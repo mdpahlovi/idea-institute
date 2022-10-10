@@ -8,10 +8,10 @@ const Navbar = () => {
     const [open, setOpen] = useState(true);
 
     return (
-        <nav className="sticky top-0 z-10">
+        <nav className="w-full bg-base-100 fixed top-0 z-10 shadow-md">
             <div className="my-container h-16 lg:h-20 flex justify-between items-center">
                 <div>
-                    <img className="w-20 lg:w-32" src={Logo} alt="" />
+                    <img className="w-24 lg:w-28" src={Logo} alt="" />
                 </div>
                 <div className="lg:hidden">
                     <label className="swap swap-rotate">
