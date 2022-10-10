@@ -1,12 +1,45 @@
 import React from "react";
-import ToggleTheme from "./components/ToggleTheme";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Main from "./layouts/Main";
+import Home from "./components/Home";
+import Topics from "./components/Topics";
+import Statistics from "./components/Statistics";
+import Blog from "./components/Blog";
+import Contact from "./components/Contact";
 
 const App = () => {
+    const router = createBrowserRouter([
+        {
+            path: "/",
+            element: <Main />,
+            children: [
+                {
+                    path: "/",
+                    element: <Home />,
+                },
+                {
+                    path: "topics",
+                    element: <Topics />,
+                },
+                {
+                    path: "statistics",
+                    element: <Statistics />,
+                },
+                {
+                    path: "blog",
+                    element: <Blog />,
+                },
+                {
+                    path: "contact",
+                    element: <Contact />,
+                },
+            ],
+        },
+    ]);
     return (
-        <div>
-            <h1 className="text-3xl font-bold underline">Hello world!</h1>
-            <ToggleTheme />
-        </div>
+        <>
+            <RouterProvider router={router}></RouterProvider>
+        </>
     );
 };
 
