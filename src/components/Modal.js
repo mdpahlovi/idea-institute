@@ -1,8 +1,11 @@
 import React from "react";
 
 const Modal = ({ questions, id }) => {
-    const selectedQuestion = questions.find((question) => question.id === id);
-    const { correctAnswer } = selectedQuestion;
+    let correctAnswer = "Pahlovi";
+    if (id) {
+        const selectedQuestion = questions.find((question) => question.id === id);
+        correctAnswer = selectedQuestion.correctAnswer;
+    }
     return (
         <>
             <input type="checkbox" id="my-modal" className="modal-toggle" />
