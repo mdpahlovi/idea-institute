@@ -6,6 +6,7 @@ import Topics from "./components/Topics";
 import Statistics from "./components/Statistics";
 import Blog from "./components/Blog";
 import Contact from "./components/Contact";
+import ErrorPage from "./components/ErrorPage";
 import QuizDetails from "./components/QuizDetails";
 
 const App = () => {
@@ -43,6 +44,10 @@ const App = () => {
                 {
                     path: "contact",
                     element: <Contact />,
+                },
+                {
+                    path: "*",
+                    element: <ErrorPage />,
                 },
             ],
         },
