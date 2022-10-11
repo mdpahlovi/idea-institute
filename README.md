@@ -1,6 +1,6 @@
 # IDEA Institute (Educational Site)
 
-### `Open [IDEA Institute](https://idea-institute.netlify.app/) to view this project`
+### Open [IDEA Institute](https://idea-institute.netlify.app/) to view this project
 
 ##### Technology Used : React, JavaScript , Tailwind CSS , Daisy UI
 
