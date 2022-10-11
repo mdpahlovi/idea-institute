@@ -6,7 +6,7 @@ import Question from "./Question";
 
 const QuizDetails = () => {
     const { data } = useLoaderData();
-    const [id, setId] = useState("");
+    const [answer, setAnswer] = useState("");
     const { name, questions } = data;
     return (
         <>
@@ -17,16 +17,16 @@ const QuizDetails = () => {
                 <div className="my-5 content-gap max-w-3xl mx-auto">
                     {questions.map((question, index) => (
                         <Question
-                            key={index}
+                            key={question.id}
                             question={question}
                             questionNo={index + 1}
                             totalQuestion={questions.length}
-                            setId={setId}
+                            setAnswer={setAnswer}
                         ></Question>
                     ))}
                 </div>
             </section>
-            <Modal questions={data.questions} id={id}></Modal>
+            <Modal answer={answer}></Modal>
         </>
     );
 };

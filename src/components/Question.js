@@ -1,7 +1,8 @@
 import React from "react";
 import { BiShow } from "react-icons/bi";
 
-const Question = ({ question, questionNo, totalQuestion, setId }) => {
+const Question = ({ question, questionNo, totalQuestion, setAnswer }) => {
+    const { correctAnswer } = question;
     function srtingToHtml() {
         return { __html: question.question };
     }
@@ -11,7 +12,7 @@ const Question = ({ question, questionNo, totalQuestion, setId }) => {
                 Question {questionNo} of {totalQuestion}
                 <label
                     htmlFor="my-modal"
-                    onClick={() => setId(question.id)}
+                    onClick={() => setAnswer(correctAnswer)}
                     className="modal-button text-3xl text-secondary"
                 >
                     <BiShow />
