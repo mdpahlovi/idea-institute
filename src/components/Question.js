@@ -10,13 +10,13 @@ const Question = ({ question, questionNo, totalQuestion, setAnswer, setOptionAnd
     }
 
     return (
-        <div className="bg-base-100 px-5 py-5 shadow-sm shadow-base-content rounded-xl flex flex-col items-start w-full">
+        <div className="bg-base-100 px-5 py-5 border rounded-xl flex flex-col items-start w-full">
             <h4 className="mt-1 text-xl text-base-content/60 w-full flex justify-between items-start">
                 Question {questionNo} of {totalQuestion}
                 <label
                     htmlFor="my-modal"
                     onClick={() => setAnswer(correctAnswer)}
-                    className="modal-button text-3xl text-secondary"
+                    className="modal-button text-3xl text-base-content"
                 >
                     <BiShow />
                 </label>
@@ -33,7 +33,7 @@ const Question = ({ question, questionNo, totalQuestion, setAnswer, setOptionAnd
                                 setOptionAndAnswer({ selectedOption: options[index], correctAnswer: correctAnswer })
                             }
                             type="radio"
-                            className="w-6 h-6"
+                            className="w-6 h-6 radio"
                         />
                         <p>{answer}</p>
                     </div>

@@ -5,10 +5,11 @@ import { CgMenuRight, CgClose, CgSearch } from "react-icons/cg";
 import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
+    // Handel Click
     const [open, setOpen] = useState(true);
 
     return (
-        <nav className="w-full bg-base-100 fixed top-0 z-10 shadow-sm shadow-base-content">
+        <nav className="bg-base-100 w-full fixed top-0 z-10 border-b">
             <div className="my-container h-16 lg:h-20 flex justify-between items-center">
                 <div>
                     <img className="w-24 lg:w-28" src={Logo} alt="" />
@@ -26,24 +27,24 @@ const Navbar = () => {
                     </label>
                 </div>
                 <div
-                    className={`w-3/4 bg-base-100 lg:w-auto fixed lg:static top-16 left-0 right-0 pb-5 lg:pb-0 lg:block ${
+                    className={`bg-base-100 w-40 lg:w-auto fixed lg:static top-20 left-4 right-0 p-5 lg:p-0 rounded-2xl lg:block ${
                         open ? "hidden" : "block"
                     }`}
                 >
                     <div className="flex flex-col lg:flex-row gap-x-5 gap-y-3">
-                        <NavLink to="/" className={({ isActive }) => (isActive ? "text-lg font-bold" : "")} end>
+                        <NavLink to="/" className={({ isActive }) => (isActive ? "font-bold underline" : "")} end>
                             Home
                         </NavLink>
-                        <NavLink to="topics" className={({ isActive }) => (isActive ? "text-lg font-bold" : "")}>
+                        <NavLink to="topics" className={({ isActive }) => (isActive ? "font-bold underline" : "")}>
                             Topics
                         </NavLink>
-                        <NavLink to="statistics" className={({ isActive }) => (isActive ? "text-lg font-bold" : "")}>
+                        <NavLink to="statistics" className={({ isActive }) => (isActive ? "font-bold underline" : "")}>
                             Statistics
                         </NavLink>
-                        <NavLink to="blog" className={({ isActive }) => (isActive ? "text-lg font-bold" : "")}>
+                        <NavLink to="blog" className={({ isActive }) => (isActive ? "font-bold underline" : "")}>
                             Blog
                         </NavLink>
-                        <NavLink to="contact" className={({ isActive }) => (isActive ? "text-lg font-bold" : "")}>
+                        <NavLink to="contact" className={({ isActive }) => (isActive ? "font-bold underline" : "")}>
                             Contact
                         </NavLink>
                     </div>

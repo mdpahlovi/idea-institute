@@ -4,12 +4,18 @@
 
 @layer components {
     .my-container {
-        @apply container mx-auto px-6;
+        @apply max-w-screen-xl xl:container mx-auto px-6;
     }
     .section-gap {
-        @apply py-6 sm:py-10 lg:py-16;
+        @apply mt-16 lg:mt-20 py-6 sm:py-10 lg:py-16;
     }
     .content-gap {
         @apply flex flex-col gap-5;
+    }
+    .heading-text {
+        @apply max-w-lg mx-auto text-[40px] leading-10 lg:text-5xl text-center font-bold;
+    }
+    .heading-details {
+        @apply max-w-lg mx-auto text-center;
     }
 }

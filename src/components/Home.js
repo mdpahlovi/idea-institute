@@ -10,14 +10,14 @@ const Home = () => {
         <>
             <Hero />
             <section className="my-container section-gap content-gap">
-                <h1 className="text-5xl font-bold text-center">
+                <h1 className="heading-text">
                     Get Start <span className="text-primary">Quiz</span>
                 </h1>
-                <p className="max-w-lg mx-auto text-center">
+                <p className="heading-details">
                     you can practise and improve your skills whenever you choose to do so. You can also learn new
                     thinks.
                 </p>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+                <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
                     {data.map((quiz, index) => (
                         <QuizCard key={index} quiz={quiz}></QuizCard>
                     ))}
