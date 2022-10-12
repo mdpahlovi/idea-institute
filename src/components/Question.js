@@ -33,7 +33,7 @@ const Question = ({ question, questionNo, totalQuestion, setAnswer, setOptionAnd
                                 setOptionAndAnswer({ selectedOption: options[index], correctAnswer: correctAnswer })
                             }
                             type="radio"
-                            className="w-6 h-6 radio"
+                            className="radio"
                         />
                         <p>{answer}</p>
                     </div>
