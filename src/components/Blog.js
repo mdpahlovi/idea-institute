@@ -12,7 +12,7 @@ const Blog = () => {
                 help other please contact us.
             </p>
             <article className="max-w-2xl mx-auto content-gap">
-                <div className="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box">
+                <div className="collapse collapse-arrow border my-border bg-base-100 rounded-box">
                     <input type="checkbox" />
                     <div className="collapse-title text-xl font-bold flex justify-between">
                         What is the purpose of react router ?

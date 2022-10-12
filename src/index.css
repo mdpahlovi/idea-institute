@@ -18,4 +18,7 @@
     .heading-details {
         @apply max-w-lg mx-auto text-center;
     }
+    .my-border {
+        @apply border border-base-300;
+    }
 }

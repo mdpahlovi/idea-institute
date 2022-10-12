@@ -9,7 +9,7 @@ const Navbar = () => {
     const [open, setOpen] = useState(true);
 
     return (
-        <nav className="bg-base-100 w-full fixed top-0 z-10 border-b">
+        <nav className="bg-base-100 w-full fixed top-0 z-10 border-b border-base-300">
             <div className="my-container h-16 lg:h-20 flex justify-between items-center">
                 <div>
                     <img className="w-24 lg:w-28" src={Logo} alt="" />

@@ -10,7 +10,7 @@ const Question = ({ question, questionNo, totalQuestion, setAnswer, setOptionAnd
     }
 
     return (
-        <div className="bg-base-100 px-5 py-5 border rounded-xl flex flex-col items-start w-full">
+        <div className="bg-base-100 px-5 py-5 my-border rounded-xl flex flex-col items-start w-full">
             <h4 className="mt-1 text-xl text-base-content/60 w-full flex justify-between items-start">
                 Question {questionNo} of {totalQuestion}
                 <label
