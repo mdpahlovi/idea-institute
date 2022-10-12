@@ -1,7 +1,7 @@
 import React from "react";
 import { BiShow } from "react-icons/bi";
 
-const Question = ({ question, questionNo, totalQuestion, setAnswer, setOptionAndAnswer }) => {
+const Question = ({ question, questionNo, totalQuestion, setAnswer, setOption }) => {
     const { correctAnswer, options } = question;
 
     // String TO HTML
@@ -23,19 +23,17 @@ const Question = ({ question, questionNo, totalQuestion, setAnswer, setOptionAnd
             </h4>
             <div dangerouslySetInnerHTML={srtingToHtml()} className="my-4 text-2xl"></div>
             <div className="w-full flex flex-col gap-4">
-                {options.map((answer, index) => (
+                {options.map((option, index) => (
                     <div
                         key={index}
+                        onClick={(e) => {
+                            setOption(e.target.innerText);
+                            setAnswer(correctAnswer);
+                        }}
                         className="flex items-center py-4 px-5 space-x-2 border-2 bg-base-content/5 border-base-content/10 rounded-xl"
                     >
-                        <input
-                            onClick={() =>
-                                setOptionAndAnswer({ selectedOption: options[index], correctAnswer: correctAnswer })
-                            }
-                            type="radio"
-                            className="radio"
-                        />
-                        <p>{answer}</p>
+                        <input type="radio" className="radio mr-2" />
+                        {option}
                     </div>
                 ))}
             </div>

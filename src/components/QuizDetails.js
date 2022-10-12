@@ -9,8 +9,8 @@ const QuizDetails = () => {
     const { data } = useLoaderData();
     const { name, questions } = data;
 
-    // Show answer
     const [answer, setAnswer] = useState("");
+    const [option, setOption] = useState("");
 
     // Toast Theme Toggle
     const themeToggle = () => {
@@ -22,33 +22,35 @@ const QuizDetails = () => {
         }
     };
 
-    // Show toast
-    const [optionAndAnswer, setOptionAndAnswer] = useState({});
-    const { selectedOption, correctAnswer } = optionAndAnswer;
-    if (selectedOption && correctAnswer) {
-        if (selectedOption === correctAnswer) {
-            toast.success("😲 WOW ! Your answer is right", {
-                position: "top-right",
-                autoClose: 3000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-                theme: themeToggle(),
-            });
-        } else {
-            toast.error("😢 OPS ! your answer in wrong", {
-                position: "top-right",
-                autoClose: 3000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-                theme: themeToggle(),
-            });
-        }
+    // Define Toast
+    const correctNotify = () => {
+        toast.success("😲 WOW ! Your answer is right", {
+            position: "top-right",
+            autoClose: 1000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: themeToggle(),
+        });
+    };
+    const wrongNotify = () => {
+        toast.error("😢 OPS ! Your answer is wrong", {
+            position: "top-right",
+            autoClose: 1000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: themeToggle(),
+        });
+    };
+
+    // Call Toast
+    if (option && answer) {
+        option === answer ? correctNotify() : wrongNotify();
     }
 
     return (
@@ -65,24 +67,12 @@ const QuizDetails = () => {
                             questionNo={index + 1}
                             totalQuestion={questions.length}
                             setAnswer={setAnswer}
-                            setOptionAndAnswer={setOptionAndAnswer}
+                            setOption={setOption}
                         ></Question>
                     ))}
                 </div>
             </section>
             <Modal answer={answer}></Modal>
-            <ToastContainer
-                position="top-right"
-                autoClose={3000}
-                hideProgressBar={false}
-                newestOnTop={false}
-                closeOnClick
-                rtl={false}
-                pauseOnFocusLoss
-                draggable
-                pauseOnHover
-                theme="light"
-            />
             <ToastContainer />
         </>
     );

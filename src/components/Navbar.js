@@ -27,7 +27,7 @@ const Navbar = () => {
                     </label>
                 </div>
                 <div
-                    className={`bg-base-100 w-40 lg:w-auto fixed lg:static top-20 left-4 right-0 p-5 lg:p-0 rounded-2xl lg:block ${
+                    className={`bg-base-100 w-40 lg:w-auto fixed lg:static top-20 left-4 right-0 p-5 lg:p-0 my-border lg:border-0 rounded-2xl lg:block ${
                         open ? "hidden" : "block"
                     }`}
                 >
