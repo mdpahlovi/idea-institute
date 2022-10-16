@@ -11,7 +11,7 @@ const QuizCard = ({ quiz }) => {
             <div className="card-body">
                 <h2 className="card-title">{name}</h2>
                 <p>Total Quiz: {total}</p>
-                <Link className="card-actions justify-end" to={`quiz/${id}`}>
+                <Link className="card-actions justify-end" to={`/topic/${id}`}>
                     <button className="btn btn-primary">Start Quiz</button>
                 </Link>
             </div>

@@ -17,27 +17,21 @@ const App = () => {
             children: [
                 {
                     path: "/",
-                    loader: async () => {
-                        return fetch("https://openapi.programming-hero.com/api/quiz");
-                    },
                     element: <Home />,
                 },
                 {
                     path: "topics",
+                    loader: () => fetch("https://openapi.programming-hero.com/api/quiz"),
                     element: <Topics />,
                 },
                 {
-                    path: "quiz/:quizID",
-                    loader: async ({ params }) => {
-                        return fetch(`https://openapi.programming-hero.com/api/quiz/${params.quizID}`);
-                    },
+                    path: "/topic/:quizID",
+                    loader: ({ params }) => fetch(`https://openapi.programming-hero.com/api/quiz/${params.quizID}`),
                     element: <QuizDetails />,
                 },
                 {
                     path: "statistics",
-                    loader: async () => {
-                        return fetch("https://openapi.programming-hero.com/api/quiz");
-                    },
+                    loader: () => fetch("https://openapi.programming-hero.com/api/quiz"),
                     element: <Statistics />,
                 },
                 {
